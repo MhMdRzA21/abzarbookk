@@ -10,10 +10,10 @@
 <meta property="og:description" content="تبدیل کیبورد، نیم‌فاصله، عدد به حروف و تاریخ — رایگان و آفلاین.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fa_IR">
-<meta property="og:url" content="https://abzarbook.ir/text-tools.html">
+<meta property="og:url" content="https://abzarbook.com/text-tools.html">
 <meta name="twitter:card" content="summary">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://abzarbook.ir/text-tools.html">
+<link rel="canonical" href="https://abzarbook.com/text-tools.html">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0);
@@ -24,6 +24,15 @@ html{scroll-padding-top:env(safe-area-inset-top,0)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.9}
 main{max-width:720px;margin:0 auto;padding:18px 16px 56px}
+
+.pattern-strip{height:8px;width:100%;background-image:repeating-linear-gradient(135deg, var(--accent) 0 3px, transparent 3px 16px),repeating-linear-gradient(45deg, var(--stamp) 0 3px, transparent 3px 16px);background-size:16px 16px;opacity:.55}
+.backlink{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--mute);text-decoration:none;margin-bottom:14px;font-family:'Lalezar',Vazirmatn,sans-serif}
+.letterhead{display:flex;align-items:center;gap:14px;border-bottom:3px double var(--rule);padding-bottom:16px;margin-bottom:16px;flex-wrap:wrap}
+.lh-icn{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none;color:#fff;background:linear-gradient(155deg,#a8681c,#7a4d10)}
+.letterhead .lh-text{flex:1;min-width:0}
+.letterhead h1{font-size:1.4rem;font-weight:800;margin:0}
+.letterhead p{margin:2px 0 0;color:var(--mute);font-size:.86rem}
+.today{font-size:.8rem;color:var(--mute);background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:5px 10px;white-space:nowrap;flex:none}
 h1{font-size:1.45rem;font-weight:800;margin:0 0 2px}
 .sub{color:var(--mute);margin:0 0 18px;font-size:.9rem}
 .tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:6px;margin-bottom:14px}
@@ -50,13 +59,15 @@ button.ghost{border:1px solid var(--rule);background:transparent;color:var(--ink
 </style>
 </head>
 <body>
+<div class="pattern-strip"></div>
 <main>
-<a href="/" style="display:inline-flex;align-items:center;gap:5px;font-size:.85rem;color:var(--mute);text-decoration:none;margin-bottom:8px;font-family:'Lalezar',Vazirmatn,sans-serif">
+<a href="/" class="backlink">
 <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.6" stroke="currentColor" stroke-width="1.1"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor"/></svg>
 ابزاربوک</a>
-<h1>ابزار متن فارسی</h1>
-<p class="sub">کیبورد، نیم‌فاصله، عدد به حروف و تبدیل تاریخ — همه آفلاین در مرورگر، بدون ارسال متن به هیچ سروری.</p>
-<p style="color:var(--mute);font-size:.76rem;margin:-10px 0 16px">به‌روزرسانی: مهر ۱۴۰۵</p>
+<div class="letterhead">
+  <div class="lh-icn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M4 20l1.2-4.2L16.6 4.4a1.6 1.6 0 0 1 2.3 0l0.7.7a1.6 1.6 0 0 1 0 2.3L8.2 18.8 4 20z" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/><path d="M14.5 6.5l3 3" stroke="currentColor" stroke-width="1.5"/></svg></div>
+  <div class="lh-text"><h1>ابزار متن فارسی</h1><p>کیبورد، نیم‌فاصله، عدد به حروف و تبدیل تاریخ — همه آفلاین در مرورگر، بدون ارسال متن به هیچ سروری.</p><p style="font-size:.74rem;margin-top:3px">به‌روزرسانی: مهر ۱۴۰۵</p></div>
+</div>
 
 <div class="tabs" role="tablist">
   <button role="tab" id="t1" aria-selected="true">کیبورد</button>
@@ -64,9 +75,6 @@ button.ghost{border:1px solid var(--rule);background:transparent;color:var(--ink
   <button role="tab" id="t3" aria-selected="false">عدد به حروف</button>
   <button role="tab" id="t4" aria-selected="false">تاریخ</button>
 </div>
-
-<div class="ad">جای تبلیغ</div>
-
 <!-- کیبورد -->
 <section class="card" id="p1">
   <label for="kbIn">متنی که کیبوردش اشتباه بوده</label>
