@@ -10,10 +10,10 @@
 <meta property="og:description" content="محاسبه رایگان عیدی، سنوات و مالیات حقوق بر اساس مصوبات ۱۴۰۵.">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="fa_IR">
-<meta property="og:url" content="https://abzarbook.ir/hoghoogh-dastmazd.html">
+<meta property="og:url" content="https://abzarbook.com/hoghoogh-dastmazd.html">
 <meta name="twitter:card" content="summary">
 <meta name="robots" content="index, follow">
-<link rel="canonical" href="https://abzarbook.ir/hoghoogh-dastmazd.html">
+<link rel="canonical" href="https://abzarbook.com/hoghoogh-dastmazd.html">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Vazirmatn:wght@400;500;700;800&display=swap">
 <style>
 :root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0);padding-bottom:env(safe-area-inset-bottom,0);
@@ -25,9 +25,15 @@ html{scroll-padding-top:env(safe-area-inset-top,0)}
 *{box-sizing:border-box}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.95}
 main{max-width:700px;margin:0 auto;padding:18px 16px 60px}
-.letterhead{border-bottom:3px double var(--rule);padding-bottom:12px;margin-bottom:14px;display:flex;justify-content:space-between;align-items:flex-end;gap:10px;flex-wrap:wrap}
-.letterhead h1{font-size:1.5rem;font-weight:800;margin:0}
-.letterhead p{margin:2px 0 0;color:var(--mute);font-size:.88rem}
+
+.pattern-strip{height:8px;width:100%;background-image:repeating-linear-gradient(135deg, var(--accent) 0 3px, transparent 3px 16px),repeating-linear-gradient(45deg, var(--stamp) 0 3px, transparent 3px 16px);background-size:16px 16px;opacity:.55}
+.backlink{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--mute);text-decoration:none;margin-bottom:14px;font-family:'Lalezar',Vazirmatn,sans-serif}
+.letterhead{display:flex;align-items:center;gap:14px;border-bottom:3px double var(--rule);padding-bottom:16px;margin-bottom:16px;flex-wrap:wrap}
+.lh-icn{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none;color:#fff;background:linear-gradient(155deg,#a1333f,#7a1f1f)}
+.letterhead .lh-text{flex:1;min-width:0}
+.letterhead h1{font-size:1.4rem;font-weight:800;margin:0}
+.letterhead p{margin:2px 0 0;color:var(--mute);font-size:.86rem}
+.today{font-size:.8rem;color:var(--mute);background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:5px 10px;white-space:nowrap;flex:none}
 .today{font-size:.82rem;color:var(--mute);background:var(--card);border:1px solid var(--rule);border-radius:8px;padding:5px 10px;white-space:nowrap}
 .typebar{display:flex;gap:6px;margin-bottom:14px;flex-wrap:wrap}
 .typebar button{flex:1;min-width:120px;border:1px solid var(--rule);background:var(--card);color:var(--mute);font:inherit;font-weight:700;font-size:.85rem;padding:9px 4px;border-radius:8px;cursor:pointer}
@@ -62,12 +68,14 @@ h2{font-size:1.05rem;margin:26px 0 6px}
 </style>
 </head>
 <body>
+<div class="pattern-strip"></div>
 <main>
-<a href="/" style="display:inline-flex;align-items:center;gap:5px;font-size:.85rem;color:var(--mute);text-decoration:none;margin-bottom:8px;font-family:'Lalezar',Vazirmatn,sans-serif">
+<a href="/" class="backlink">
 <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.6" stroke="currentColor" stroke-width="1.1"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor"/></svg>
 ابزاربوک</a>
 <div class="letterhead">
-  <div><h1>ابزار حقوق و دستمزد</h1><p>عیدی، سنوات/پاداش پایان خدمت و مالیات — مصوبات ۱۴۰۵</p><p style="font-size:.74rem;margin-top:3px">به‌روزرسانی: مهر ۱۴۰۵</p></div>
+  <div class="lh-icn"><svg width="24" height="24" viewBox="0 0 24 24" fill="none"><rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" stroke-width="1.6"/><circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="1.4"/><path d="M6 9v0M18 15v0" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg></div>
+  <div class="lh-text"><h1>ابزار حقوق و دستمزد</h1><p>عیدی، سنوات/پاداش پایان خدمت و مالیات — مصوبات ۱۴۰۵</p><p style="font-size:.74rem;margin-top:3px">به‌روزرسانی: مهر ۱۴۰۵</p></div>
   <div class="today" id="today"></div>
 </div>
 
@@ -82,9 +90,6 @@ h2{font-size:1.05rem;margin:26px 0 6px}
   <button role="tab" id="t2" aria-selected="false">سنوات / پایان‌خدمت</button>
   <button role="tab" id="t3" aria-selected="false">مالیات حقوق</button>
 </div>
-
-<div class="ad">جای تبلیغ</div>
-
 <!-- عیدی -->
 <section class="card" id="p1">
   <span class="badge" id="b1"></span>
@@ -139,9 +144,6 @@ h2{font-size:1.05rem;margin:26px 0 6px}
   <div class="res" id="r3" aria-live="polite"></div>
   <p class="hint" style="margin-top:10px">جدول پلکانی مالیات حقوق برای کارکنان دولتی و غیردولتی یکسان است.</p>
 </section>
-
-<div class="ad">جای تبلیغ</div>
-
 <h2>سؤالات متداول</h2>
 <details><summary>فرق عیدی کارگر و کارمند دولت چیست؟</summary><p>عیدی کارگرِ مشمول قانون کار (و نیروی شرکتی/پیمانکاری که زیرمجموعه شرکت است) بر اساس ۶۰ روز حقوق پایه و به‌نسبت مدت کار محاسبه می‌شود. عیدی کارمند دولت و نیروی مسلح طبق مصوبه هیئت‌وزیران، مبلغی ثابت و یکسان برای همه است، نه فرمول روزی.</p></details>
 <details><summary>سنوات و پاداش پایان خدمت چه فرقی دارند؟</summary><p>سنوات (قانون کار) یعنی ۳۰ روز آخرین حقوق به‌ازای هر سال سابقه، در هر زمان پایان قرارداد. پاداش پایان خدمت (کارمند دولت/نیروی مسلح، ماده ۱۰۷ قانون مدیریت خدمات کشوری) یعنی یک ماه آخرین حقوق و مزایای مستمر به‌ازای هر سال خدمت، تا سقف ۳۰ سال و سقف ریالی مصوب (۱۴۰۵: ۷۵۰ میلیون تومان)، فقط هنگام بازنشستگی.</p></details>
