@@ -26,7 +26,6 @@ html{scroll-padding-top:env(safe-area-inset-top,0)}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Vazirmatn,Tahoma,sans-serif;line-height:1.95}
 main{max-width:700px;margin:0 auto;padding:18px 16px 60px}
 
-.pattern-strip{height:8px;width:100%;background-image:repeating-linear-gradient(135deg, var(--accent) 0 3px, transparent 3px 16px),repeating-linear-gradient(45deg, var(--stamp) 0 3px, transparent 3px 16px);background-size:16px 16px;opacity:.55}
 .backlink{display:inline-flex;align-items:center;gap:6px;font-size:.85rem;color:var(--mute);text-decoration:none;margin-bottom:14px;font-family:'Lalezar',Vazirmatn,sans-serif}
 .letterhead{display:flex;align-items:center;gap:14px;border-bottom:3px double var(--rule);padding-bottom:16px;margin-bottom:16px;flex-wrap:wrap}
 .lh-icn{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;flex:none;color:#fff;background:linear-gradient(155deg,#a1333f,#7a1f1f)}
@@ -65,10 +64,29 @@ details p{margin:8px 0 0;color:var(--mute);font-size:.92rem}
 h2{font-size:1.05rem;margin:26px 0 6px}
 .note{font-size:.78rem;color:var(--mute);margin-top:22px;border-top:1px solid var(--rule);padding-top:10px}
 [hidden]{display:none!important}
+
+.card{position:relative;border-radius:14px;box-shadow:0 1px 2px rgba(20,16,8,.05),0 14px 30px -20px rgba(20,16,8,.45);overflow:hidden}
+.card::before{content:"";position:absolute;inset:0 0 auto 0;height:4px;background:linear-gradient(90deg,var(--accent),var(--stamp))}
+.row-f .num{background:color-mix(in srgb,var(--accent) 14%,transparent);border-color:var(--accent);color:var(--accent);font-weight:800}
+.go{background:linear-gradient(155deg,var(--accent),color-mix(in srgb,var(--accent) 65%,#000));box-shadow:0 8px 18px -8px color-mix(in srgb,var(--accent) 65%,transparent);letter-spacing:.2px;transition:transform .12s ease,box-shadow .12s ease}
+.go:active{transform:translateY(1px) scale(.99);box-shadow:0 4px 10px -6px color-mix(in srgb,var(--accent) 65%,transparent)}
+.res{border:1px solid var(--rule);border-right:4px solid var(--stamp);border-radius:12px;background:var(--card);box-shadow:0 1px 2px rgba(20,16,8,.04)}
+input,select{box-shadow:inset 0 1px 2px rgba(20,16,8,.04);transition:border-color .12s}
+input:focus-visible,select:focus-visible{border-color:var(--accent)}
+.tabs{background:var(--card);border:1px solid var(--rule);border-radius:11px;padding:4px}
+.tabs button{border-radius:8px!important}
+.tabs button[aria-selected="true"]{background:color-mix(in srgb,var(--accent) 14%,transparent);border-bottom-color:transparent!important}
+.typebar{background:var(--card);border:1px solid var(--rule);border-radius:11px;padding:4px}
+.typebar button{border:0!important;border-radius:8px!important}
+.subtabs button[aria-selected="true"]{box-shadow:0 4px 10px -5px color-mix(in srgb,var(--accent2) 60%,transparent)}
+.share-row{display:flex;gap:8px;margin:18px 0 0}
+.share-btn{flex:1;text-align:center;border:1px solid var(--rule);border-radius:11px;padding:11px;text-decoration:none;color:var(--ink);font-size:.82rem;font-weight:700;background:var(--card);cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 1px 2px rgba(20,16,8,.04)}
+.share-btn:hover{border-color:var(--accent)}
+details{border-radius:10px;border:1px solid var(--rule);border-bottom:1px solid var(--rule)!important;padding:11px 14px!important;margin-bottom:8px;background:var(--card)}
+.copyBtn{border-radius:8px}
 </style>
 </head>
 <body>
-<div class="pattern-strip"></div>
 <main>
 <a href="/" class="backlink">
 <svg width="15" height="15" viewBox="0 0 15 15" fill="none"><circle cx="7.5" cy="7.5" r="6.6" stroke="currentColor" stroke-width="1.1"/><circle cx="7.5" cy="7.5" r="1.4" fill="currentColor"/></svg>
@@ -151,15 +169,15 @@ h2{font-size:1.05rem;margin:26px 0 6px}
 <details><summary>سقف معافیت مالیاتی ۱۴۰۵ چقدر است؟</summary><p>حقوق ماهانه تا ۴۰ میلیون تومان معاف است؛ عیدی سالانه (قانون کار) تا ۴۰ میلیون تومان معاف است و مازاد آن مشمول مالیات می‌شود.</p></details>
 
 <p class="note">این ابزار صرفاً برای برآورد شخصی است، نه مرجع رسمی یا مشاوره مالی/حقوقی. اعداد طبق مصوبه شورای عالی کار، هیئت‌وزیران و قانون بودجه ۱۴۰۵ تنظیم شده‌اند؛ پیش از تصمیم مهم، با منبع رسمی یا کارشناس ذی‌صلاح تطبیق دهید. ابزاربوک وابستگی رسمی به هیچ نهاد دولتی ندارد، اطلاعات شما را ذخیره یا ارسال نمی‌کند و مسئولیتی در قبال تصمیمات متکی بر این اعداد نمی‌پذیرد.</p>
-<div style="display:flex;gap:8px;margin:18px 0 0">
-  <a id="tgShare" target="_blank" rel="noopener" style="flex:1;text-align:center;border:1px solid var(--rule);border-radius:9px;padding:10px;text-decoration:none;color:var(--ink);font-size:.82rem;font-weight:700">📤 اشتراک در تلگرام</a>
-  <button id="copyLink" style="flex:1;border:1px solid var(--rule);background:transparent;border-radius:9px;padding:10px;font:inherit;font-size:.82rem;font-weight:700;color:var(--ink);cursor:pointer">🔗 کپی لینک صفحه</button>
+<div class="share-row">
+  <a id="tgShare" class="share-btn" target="_blank" rel="noopener">📤 اشتراک در تلگرام</a>
+  <button id="copyLink" class="share-btn">🔗 کپی لینک صفحه</button>
 </div>
 <script>
 document.getElementById("tgShare").href="https://t.me/share/url?url="+encodeURIComponent(location.href)+"&text="+encodeURIComponent(document.title);
 document.getElementById("copyLink").onclick=function(){navigator.clipboard.writeText(location.href).then(()=>{this.textContent="✓ کپی شد";setTimeout(()=>this.textContent="🔗 کپی لینک صفحه",1500)}).catch(()=>{})};
 </script>
-<p style="font-size:.8rem;margin-top:14px">سایر ابزارهای ابزاربوک: <a href="/rahn-vam.html" style="color:var(--accent)">رهن، اجاره و وام ازدواج</a> · <a href="/text-tools.html" style="color:var(--accent)">ابزار متن فارسی</a></p>
+<p style="font-size:.8rem;margin-top:14px">سایر ابزارهای ابزاربوک: <a href="/rahn-vam.html" style="color:var(--accent)">رهن، اجاره و وام ازدواج</a> · <a href="/text-tools.html" style="color:var(--accent)">ابزار متن فارسی</a> · <a href="/vahed.html" style="color:var(--accent)">مبدل واحد</a> · <a href="/salamat.html" style="color:var(--accent)">محاسبه‌گر سلامت</a> · <a href="/size-chart.html" style="color:var(--accent)">مبدل سایز</a> · <a href="/etebarsanji.html" style="color:var(--accent)">اعتبارسنجی شبا و کد ملی</a></p>
 </main>
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
