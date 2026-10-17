@@ -84,6 +84,19 @@ input:focus-visible,select:focus-visible{border-color:var(--accent)}
 .share-btn:hover{border-color:var(--accent)}
 details{border-radius:10px;border:1px solid var(--rule);border-bottom:1px solid var(--rule)!important;padding:11px 14px!important;margin-bottom:8px;background:var(--card)}
 .copyBtn{border-radius:8px}
+
+/* بافت ظریف کاغذ دفترداری */
+body{background-image:radial-gradient(color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);background-size:24px 24px;background-position:-4px -4px}
+/* نشانه گرافیکی سؤال روی هر آکاردئون */
+details{position:relative}
+details>summary{padding-right:30px;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details::before{content:"؟";position:absolute;right:0;top:9px;width:20px;height:20px;border-radius:50%;background:color-mix(in srgb, var(--accent2, var(--accent)) 18%, transparent);color:var(--accent2, var(--accent));font-weight:800;font-size:.72rem;display:flex;align-items:center;justify-content:center;line-height:1;pointer-events:none}
+details[open]::before{background:var(--accent2, var(--accent));color:#fff}
+h1,h2,.lh-text h1{letter-spacing:.2px}
+@media (min-width:860px){
+  main{max-width:810px}
+}
 </style>
 </head>
 <body>

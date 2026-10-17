@@ -87,6 +87,24 @@ a.row:hover .arrow{transform:translateX(-3px);border-color:var(--accent);color:v
   a.row{padding:16px}
   .icn{width:48px;height:48px}
 }
+
+/* بافت ظریف کاغذ دفترداری */
+body{background-image:radial-gradient(color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);background-size:24px 24px;background-position:-4px -4px}
+/* نشانه گرافیکی سؤال روی هر آکاردئون (در صورت وجود در صفحات دیگر) */
+details{position:relative}
+details>summary{padding-right:30px;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details::before{content:"؟";position:absolute;right:0;top:9px;width:20px;height:20px;border-radius:50%;background:color-mix(in srgb, var(--accent2) 18%, transparent);color:var(--accent2);font-weight:800;font-size:.72rem;display:flex;align-items:center;justify-content:center;line-height:1;pointer-events:none}
+details[open]::before{background:var(--accent2);color:#fff}
+
+@media (min-width:860px){
+  main{max-width:1040px}
+  .ledger{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  a.row{align-items:flex-start}
+}
+@media (min-width:860px) and (max-width:1099px){
+  .why{grid-template-columns:repeat(3,1fr)}
+}
 </style>
 </head>
 <body>
@@ -107,13 +125,13 @@ a.row:hover .arrow{transform:translateX(-3px);border-color:var(--accent);color:v
         <span class="domain">abzarbook.com</span>
       </div>
     </div>
-    <p class="tagline">محاسبات مالی فارسی، <em>بدون سردرگمی</em> و بدون ثبت‌نام.</p>
-    <p class="subtag">عیدی، سنوات، مالیات حقوق، رهن به اجاره، وام ازدواج و فرزندآوری، و ابزارهای متن فارسی — هر عدد طبق مصوبات سال ۱۴۰۵، همین‌جا در مرورگر شما محاسبه می‌شود.</p>
+    <p class="tagline">محاسبات و تبدیل‌های فارسی، <em>بدون سردرگمی</em> و بدون ثبت‌نام.</p>
+    <p class="subtag">عیدی و سنوات، رهن به اجاره و وام، مبدل واحد، محاسبه‌گر سلامت، سایز پوشاک، اعتبارسنجی شبا و کد ملی، و ابزارهای متن فارسی — هر عدد همین‌جا در مرورگر شما محاسبه می‌شود.</p>
 
     <div class="stats">
       <div class="stat">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 2v20M2 12h20" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
-        <span><b>۴</b>ابزار رایگان</span>
+        <span><b>۷</b>ابزار رایگان</span>
       </div>
       <div class="stat">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M12 3v6l4 2" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/></svg>

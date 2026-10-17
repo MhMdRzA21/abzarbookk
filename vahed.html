@@ -50,7 +50,7 @@ input:focus-visible,select:focus-visible{outline:3px solid var(--accent2);outlin
 .grid-res{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 @media (min-width:480px){.grid-res{grid-template-columns:1fr 1fr 1fr}}
 .res-tile{border:1px solid var(--rule);border-radius:10px;padding:10px 12px;background:var(--bg)}
-.res-tile b{display:block;font-size:1.02rem}
+.res-tile b{display:block;font-size:1.05rem;direction:ltr;text-align:right;unicode-bidi:isolate;letter-spacing:.4px;font-variant-numeric:tabular-nums}
 .res-tile span{font-size:.74rem;color:var(--mute)}
 .res-tile.active{border-color:var(--accent2);background:color-mix(in srgb,var(--accent2) 10%,var(--bg))}
 h2{font-size:1.05rem;margin:28px 0 6px}
@@ -62,6 +62,19 @@ details p{margin:8px 0 0;color:var(--mute);font-size:.92rem}
 .share-btn{flex:1;text-align:center;border:1px solid var(--rule);border-radius:11px;padding:11px;text-decoration:none;color:var(--ink);font-size:.82rem;font-weight:700;background:var(--card);cursor:pointer;font:inherit;display:inline-flex;align-items:center;justify-content:center;gap:6px;box-shadow:0 1px 2px rgba(20,16,8,.04)}
 .share-btn:hover{border-color:var(--accent2)}
 [hidden]{display:none!important}
+
+/* بافت ظریف کاغذ دفترداری */
+body{background-image:radial-gradient(color-mix(in srgb, var(--ink) 6%, transparent) 1px, transparent 1px);background-size:24px 24px;background-position:-4px -4px}
+/* نشانه گرافیکی سؤال روی هر آکاردئون */
+details{position:relative}
+details>summary{padding-right:30px;list-style:none}
+details>summary::-webkit-details-marker{display:none}
+details::before{content:"؟";position:absolute;right:0;top:9px;width:20px;height:20px;border-radius:50%;background:color-mix(in srgb, var(--accent2, var(--accent)) 18%, transparent);color:var(--accent2, var(--accent));font-weight:800;font-size:.72rem;display:flex;align-items:center;justify-content:center;line-height:1;pointer-events:none}
+details[open]::before{background:var(--accent2, var(--accent));color:#fff}
+h1,h2,.lh-text h1{letter-spacing:.2px}
+@media (min-width:860px){
+  main{max-width:830px}
+}
 </style>
 </head>
 <body>
